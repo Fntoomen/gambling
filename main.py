@@ -18,18 +18,18 @@ cost = 700
 money = 10000
 tries = 0
 
-all_spend = []
-all_earned = []
-x_axis = []
+all_spend = [0]
+all_earned = [0]
+x_axis = [0]
 
 
 for i in range(10000):
-    tries += 1
-    x_axis.append(tries)
     money = random.randint(700, 10000)
     spend, earned = calc(wins, cost, money)
-    all_spend.append(spend)
-    all_earned.append(earned)
+    all_spend.append(all_spend[-1]+spend)
+    all_earned.append(all_earned[-1]+earned)
+    tries += 1
+    x_axis.append(tries)
 
 averaged_spend = [mean(i) for i in zip(all_spend)]
 averaged_earned = [mean(i) for i in zip(all_earned)]
