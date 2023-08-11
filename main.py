@@ -15,7 +15,6 @@ def calc(prizes, cost, money):
 
 prizes = [1, 2, 3, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000]
 cost = 700
-money = 10000
 tries = 0
 
 all_spend = [0]
