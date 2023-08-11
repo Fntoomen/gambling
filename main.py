@@ -4,16 +4,16 @@ import matplotlib.pyplot as plt
 def mean(numbers):
     return float(sum(numbers)) / max(len(numbers), 1)
 
-def calc(wins, cost, money):
+def calc(prizes, cost, money):
     spend = 0
     earned = 0
 
     while spend < money:
         spend += cost
-        earned += random.choice(wins)
+        earned += random.choice(prizes)
     return spend, earned
 
-wins = [1, 2, 3, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000]
+prizes = [1, 2, 3, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000]
 cost = 700
 money = 10000
 tries = 0
@@ -25,7 +25,7 @@ x_axis = [0]
 
 for i in range(10000):
     money = random.randint(700, 10000)
-    spend, earned = calc(wins, cost, money)
+    spend, earned = calc(prizes, cost, money)
     all_spend.append(all_spend[-1]+spend)
     all_earned.append(all_earned[-1]+earned)
     tries += 1
