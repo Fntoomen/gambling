@@ -22,8 +22,8 @@ all_earned = [0]
 x_axis = [0]
 
 
-for i in range(10000):
-    money = random.randint(700, 10000)
+for i in range(100000):
+    money = random.randint(700, 1000000)
     spend, earned = calc(prizes, cost, money)
     all_spend.append(all_spend[-1]+spend)
     all_earned.append(all_earned[-1]+earned)
